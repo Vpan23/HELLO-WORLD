@@ -1,0 +1,109 @@
+Algoritmo helloWorld
+	Limpiar Pantalla;
+	menu();	//Acceder al menu.
+FinAlgoritmo
+
+SubProceso retorno()
+	Definir i,j,k,a Como Entero
+	Limpiar Pantalla
+	Escribir Sin Saltar "CARGANDO";
+	Para a <- 0 Hasta 2 Con Paso 1 Hacer
+		para i <- 0 Hasta 3 Con Paso 1 Hacer
+			esperar 300 Milisegundos;
+			Escribir Sin Saltar ".";
+		FinPara
+		Limpiar Pantalla
+		Escribir Sin Saltar "CARGANDO";
+	FinPara
+	Escribir "";
+	Limpiar Pantalla;
+FinSubProceso
+
+//			#########################    MENU    #########################
+
+SubProceso menu()
+	Definir opc Como Entero;
+	//#1 - INVOCAR LA PANTALLA DE CARGA.
+	pantallaCarga(opc);
+	si opc = 1 Entonces
+		seleccion(opc);
+		Hacer
+			segun opc Hacer
+//					Escribir "(1) - Batallar";
+//					Escribir "(2) - Tienda";
+//					Escribir "(3) - Ver Perfil";
+					//					Escribir "(4) - Salir";
+				caso 1: escribir "EN MANTENIMIENTO...";
+					Esperar Tecla;
+				caso 2:
+					Escribir "Tienda";
+					Esperar Tecla;
+					Escribir "a";
+				Caso 3:
+					Escribir "Perfil:";
+					Esperar Tecla;
+			FinSegun
+		Mientras Que opc <> 4;
+	FinSi	//EN CASO DE QUE LA OPCION DEL USUARIO HAYA SIDO SALIR ENTONCES NOS SALTARA ESTE BLOQUE DE CODIGOS.
+	
+FinSubProceso
+
+//#1 - INVOCAR LA PANTALLA DE CARGA.
+SubProceso pantallaCarga(opc Por Referencia)
+	Definir final, i, j Como Entero;
+	Definir marcos, title, marco, titulo, letra Como Caracter;
+	dimension marco[100], titulo[100];
+	
+	Limpiar Pantalla
+	marcos = "=======================================";
+	title = "   WELCOME TO HELLO WORLD - GAME 1.1   ";
+	final = Longitud(marcos);
+	para i = 0 Hasta final Hacer
+		letra = Subcadena(marcos, i, i);		//GUARDARA NUESTRO MARCO Y TITULO PARA HACER UN EFECTO DE ANIMACION.
+		marco[i] = letra;
+		letra = Subcadena(title, i, i);
+		titulo[i] = letra;
+	FinPara
+	
+	//					########################### 	Entrada de ANIMACION	#######################
+	
+//	Para i = 0 Hasta final Hacer	
+//		Escribir Sin Saltar marco[i];
+//		Esperar 20 Milisegundos;
+//	FinPara	;	escribir "";
+//	Para i = 0 Hasta final-1 Hacer
+//		Escribir Sin Saltar titulo[i];
+//		Esperar 80 Milisegundos;
+//	FinPara	;	escribir "";
+//	Para i = 0 Hasta final-1 Hacer
+//		Escribir Sin Saltar marco[i];
+//		Esperar 20 Milisegundos;
+//	FinPara	;	escribir "";
+	
+	Hacer
+		Borrar Pantalla		//Menu para inicializar la jugada o simplemente salir.
+		Escribir "=======================================";
+		Escribir "   WELCOME TO HELLO WORLD - GAME 1.1   ";
+		Escribir "=======================================";
+		
+		Escribir "Choose an Option:";
+		Escribir "(1) Play";
+		Escribir "(2) Exit";
+		Escribir Sin Saltar "Opc: ";
+		leer opc;
+	Mientras Que opc <> 1 y opc <> 2
+	
+FinSubProceso
+
+SubProceso seleccion(opc Por Referencia)
+	Limpiar Pantalla
+	
+	Escribir "Menu de Opciones: ";		// 		CREACION DE NUESTRO MENU PRINCIPAL.
+	Escribir "(1) - Batallar";
+	Escribir "(2) - Tienda";
+	Escribir "(3) - Ver Perfil";
+	Escribir "(4) - Salir";
+	Escribir Sin Saltar "Opc: ";
+	leer opc;
+FinSubProceso
+	
