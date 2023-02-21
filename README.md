@@ -25,3 +25,14 @@ helloWorld1.3   -   20.02.23
 - Can win/lose trophies in every match, depending on the result of the game.
 - Can show the lives of both players in the game.
 - Reordered some inecessary callouts.  
+
+helloWorld1.4  -  21.02.23
+- Complete the logic of the shop.
+- Give different clasification of Items.
+- Create [C] - COMMON.
+- Create [R] - RARE.
+- Create [E] - EPIC.
+- Create [L] - LEGENDARY.
+- Create [M] - MYTH.
+- Create [U] - UNIQUE.
+- List of Items that you can win.
