@@ -36,3 +36,7 @@ helloWorld1.4  -  21.02.23
 - Create [M] - MYTH.
 - Create [U] - UNIQUE.
 - List of Items that you can win.
+
+helloWorld1.5  -  22.02.23
+- added some different rank with their own needed trophies.
+- 
