@@ -1,0 +1,423 @@
+Algoritmo helloWorld
+	Limpiar Pantalla;
+	menu();	//Acceder al menu.
+FinAlgoritmo
+
+SubProceso retorno()
+	Definir i,j,k,a Como Entero
+	Limpiar Pantalla
+	Escribir Sin Saltar "CARGANDO";
+	Para a <- 0 Hasta 2 Con Paso 1 Hacer
+		para i <- 0 Hasta 3 Con Paso 1 Hacer
+			esperar 300 Milisegundos;
+			Escribir Sin Saltar ".";
+		FinPara
+		Limpiar Pantalla
+		Escribir Sin Saltar "CARGANDO";
+	FinPara
+	Escribir "";
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso retornoEmparejando()
+	Definir i,j,k,a Como Entero
+	Limpiar Pantalla
+	Escribir Sin Saltar "EMPAREJANDO";
+	Para a <- 0 Hasta 2 Con Paso 1 Hacer
+		para i <- 0 Hasta 3 Con Paso 1 Hacer
+			esperar 200 Milisegundos;
+			Escribir Sin Saltar ".";
+		FinPara
+		Limpiar Pantalla
+		Escribir Sin Saltar "EMPAREJANDO";
+	FinPara
+	Escribir "";
+	Limpiar Pantalla;
+FinSubProceso
+
+//			#########################    MENU    #########################
+
+SubProceso menu()
+	Definir nombre Como Caracter;
+	Definir trofeos, long, opc como entero;
+	nombre = " ";
+	hacer
+		Escribir "Ingrese un nombre" Sin Saltar;
+		leer nombre;
+	Hasta Que nombre <> " ";
+	trofeos = 0;
+	//#1 - INVOCAR LA PANTALLA DE CARGA.
+	pantallaCarga(opc);
+	si opc = 1 Entonces
+		Hacer
+			seleccion(opc);				//Cada vez que se termine una accion, volvera a preguntar por la posicion a la que quiere acceder.
+			segun opc Hacer
+				caso 1: 
+					problema(trofeos);
+				caso 2:
+					tienda();
+				Caso 3:
+					perfil(trofeos, nombre);
+			FinSegun
+		Mientras Que opc <> 4;
+	FinSi	//EN CASO DE QUE LA OPCION DEL USUARIO HAYA SIDO SALIR ENTONCES NOS SALTARA ESTE BLOQUE DE CODIGOS.
+	
+FinSubProceso
+
+//#1 - INVOCAR LA PANTALLA DE CARGA.
+SubProceso pantallaCarga(opc Por Referencia)
+	Definir final, i, j Como Entero;
+	Definir marcos, title, marco, titulo, letra Como Caracter;
+	dimension marco[100], titulo[100];
+	
+	//	Limpiar Pantalla
+	//	marcos = "=======================================";
+	//	title = "   WELCOME TO HELLO WORLD - GAME 1.1   ";
+	//	final = Longitud(marcos);
+	//	para i = 1 Hasta final+1 Hacer
+	//		letra = Subcadena(marcos, i, i);		//GUARDARA NUESTRO MARCO Y TITULO PARA HACER UN EFECTO DE ANIMACION.
+	//		marco[i] = letra;
+	//		letra = Subcadena(title, i, i);
+	//		titulo[i] = letra;
+	//	FinPara
+	
+	//					########################### 	Entrada de ANIMACION	#######################
+	
+	//	Para i = 0 Hasta final Hacer	
+	//		Escribir Sin Saltar marco[i];
+	//		Esperar 20 Milisegundos;
+	//	FinPara	;	escribir "";
+	//	Para i = 0 Hasta final-1 Hacer
+	//		Escribir Sin Saltar titulo[i];
+	//		Esperar 80 Milisegundos;
+	//	FinPara	;	escribir "";
+	//	Para i = 0 Hasta final-1 Hacer
+	//		Escribir Sin Saltar marco[i];
+	//		Esperar 20 Milisegundos;
+	//	FinPara	;	escribir "";
+	
+	Hacer
+		Borrar Pantalla		//Menu para inicializar la jugada o simplemente salir.
+		Escribir "=======================================";
+		Escribir "   WELCOME TO HELLO WORLD - GAME 1.5   ";
+		Escribir "=======================================";
+		
+		Escribir "Choose an Option:";
+		Escribir "(1) Play";
+		Escribir "(2) Exit";
+		Escribir Sin Saltar "Opc: ";
+		leer opc;
+	Mientras Que opc <> 1 y opc <> 2
+	
+FinSubProceso
+
+SubProceso seleccion(opc Por Referencia)
+	Limpiar Pantalla
+	
+	Escribir "Menu de Opciones: ";		// 		CREACION DE NUESTRO MENU PRINCIPAL.
+	Escribir "(1) - Batallar";
+	Escribir "(2) - Tienda";
+	Escribir "(3) - Ver Perfil";
+	Escribir "(4) - Salir";
+	Escribir Sin Saltar "Opc: ";
+	leer opc;
+FinSubProceso
+
+//							  	 ###################################  	  ( 1 ) - BATALLA	  	############################################
+//		######################################################  		Problemas de Batalla			##############################################
+
+SubProceso problema(trofeos Por Referencia)
+	Definir num1, num2, operacion, vidaEnemigo, vidaUsuario  Como entero;
+	Definir respuesta, resultado como real;
+	Definir pausa Como caracter;
+	vidaEnemigo = 3;
+	vidaUsuario = 3;
+	//tutorialBatalla();
+	//retornoEmparejando();
+	Hacer
+		resultado = 0
+		num1 = Aleatorio(0,9);
+		num2 = Aleatorio(0,9);
+		operacion = Aleatorio(1,4);
+		//LA OPERACION CAMBIARA SEGUN SEA EL NUMERO QUE LE SEA OTORGADA.
+		//1. - Suma.
+		//2. - Resta.
+		//3. - Multiplicacion.
+		//4. - Division.
+		Limpiar Pantalla;
+		Escribir "";
+		Escribir "(You)    (Enemy)";
+		Escribir " []        []";
+		Escribir " ",vidaUsuario,"         ",vidaEnemigo;
+		Escribir "";
+		Escribir "";
+		tocapara();
+		
+		Limpiar Pantalla;
+		
+		Escribir "RESUELVA:";
+		segun operacion Hacer
+			caso 1: 
+				Escribir num1," + ",num2," = ";
+				resultado = num1 + num2;
+			caso 2: 
+				Escribir num1," - ",num2," = ";
+				resultado = num1 - num2;
+			caso 3: 
+				Escribir num1," X ",num2," = ";
+				resultado = num1 * num2;
+			caso 4: 
+				Hacer
+					num1 = Aleatorio(1,99);
+					num2 = Aleatorio(1,99);
+				Hasta Que num1 > num2;		//Cambiara ambos numeros hasta que el primero sea mayor que el segundo y que sean mayores a 0.
+				
+				Escribir num1," / ",num2," = ";
+				resultado = num1 / num2;
+		FinSegun
+		leer respuesta;
+		si respuesta = resultado Entonces
+			vidaEnemigo = vidaEnemigo - 1;
+		SiNo
+			vidaUsuario = vidaUsuario - 1;
+		FinSi
+	Hasta Que vidaEnemigo = 0 o vidaUsuario = 0 
+	Limpiar Pantalla;
+	si vidaEnemigo = 0 Entonces
+		Escribir "Has ganado! +30 Trofeos";
+		trofeos = trofeos + 30;
+	SiNo
+		Escribir "Has perdido! -30 Trofeos";
+		trofeos = trofeos - 30;
+		si trofeos < 0 Entonces
+			trofeos = 0;
+		FinSi
+	FinSi
+	Escribir "Tienes: ", trofeos, " Trofeos";
+	tocapara();
+FinSubProceso
+
+
+//  			#####################################			CASO #2				####################################
+//Lista de Objetos segun su clasificacion.
+//Comunes.
+// - Pala de metal.
+//- Hacha.
+//- Botas de cuero.
+//- Warm Giant Brown Bear Leather Cloak.
+//- Warm Giant Brown Bear Leather Hat.
+//- Warm Giant Brown Bear Leather Armor
+//- Blacksmith's Hammer.
+//- Smith's Old Axe.
+//- Cabezal de paja.
+//- Cuchillo.
+
+//Rare
+//- Mengel's Plate Armor.
+//- Warm and Functional Giant Brown Bear Leather Gloves.
+//- Divine Shield.
+//- Mamon's Greatsword
+//- 30 Golden Needles Made of Pavranium.
+//- Black Quartz Earrings.
+//- Kruger's Scissors and Knife.
+//- Gis' Pickaxe.
+
+//Epic
+//- Khan's Masterpiece.
+//- The Best Gauntlets.
+//- Adventurer's Boots.
+//- Great Giant Brown Bear Boots.
+//- Unknown Blacksmith's Hammer.
+//- Elfin Stone's Ring.
+//- Latina's Necklace.
+
+//Legendary
+//- Daoist Woodcutting Axe
+//- Alex's Quick Gloves (Produced by Pagma).
+//- Elf's Bow Thimble (Made by Pagma).
+//- World Tree's Necklace.
+//- Lorex's Red Armor.
+
+//Myth
+//- World Crushing Sword of the Noble White Tiger.
+//- Hero King's Armor.
+//- Blacksmith Hammer to Go Against the Gods.
+//- Mjolnir - Human World Version x3.
+
+//Unique
+//- Duliani's Sword.
+//- Fenix's Sword.
+
+
+SubProceso tienda()
+	Definir posicion , asignacionItems, clasificacion Como Entero;
+	Definir vector, ganador Como Caracter;
+	Dimension vector[100];
+	para i = 1 Hasta 99 Hacer
+		asignacionItems = Aleatorio(1,12);
+		segun asignacionItems Hacer
+			caso 1,2,3,4:
+				clasificacion = Aleatorio(1,9);
+				Segun clasificacion Hacer
+					caso 1: 
+						vector[i] = "Pala[C]";
+					caso 2: 
+						vector[i] = "Hacha[C]";
+					caso 3: 
+						vector[i] = "Botas[C]";
+					caso 4: 
+						vector[i] = "Cloak[C]";
+					caso 5: 
+						vector[i] = "Hat[C]";
+					caso 6: 
+						vector[i] = "Armor[C]";
+					caso 7: 
+						vector[i] = "Hammer[C]";
+					caso 8: 
+						vector[i] = "Old Axe[C]";
+					caso 9: 
+						vector[i] = "Cuchillo[C]";
+				FinSegun
+			caso 5,6,7:
+				clasificacion = Aleatorio(1,8);
+				Segun clasificacion Hacer
+					caso 1: 
+						vector[i] = "Armor  [R]";
+					caso 2: 
+						vector[i] = "Gloves  [R]";
+					caso 3: 
+						vector[i] = "Shield  [R]";
+					caso 4: 
+						vector[i] = "Grtsword[R]";
+					caso 5: 
+						vector[i] = "Needles [R]";
+					caso 6: 
+						vector[i] = "Earrings[R]";
+					caso 7: 
+						vector[i] = "Scissors[R]";
+					caso 8: 
+						vector[i] = "Pickaxe [R]";;
+				FinSegun
+			caso 8,9:
+				clasificacion = Aleatorio(1,7);
+				Segun clasificacion Hacer
+					caso 1: 
+						vector[i] = "Masterp [E]";
+					caso 2: 
+						vector[i] = "Gauntlet[E]";
+					caso 3: 
+						vector[i] = "Armor   [E]";
+					caso 4: 
+						vector[i] = "Boots   [E]";
+					caso 5: 
+						vector[i] = "Hammer  [E]";
+					caso 6: 
+						vector[i] = "Ring    [E]";
+					caso 7: 
+						vector[i] = "Necklace[E]";
+				FinSegun
+			caso 10,11:
+				clasificacion = Aleatorio(1,5);
+				Segun clasificacion Hacer
+					caso 1: 
+						vector[i] = "Axe     [L]";
+					caso 2: 
+						vector[i] = "Gloves  [L]";
+					caso 3: 
+						vector[i] = "Bow     [L]";
+					caso 4: 
+						vector[i] = "Necklace[L]";
+					caso 5: 
+						vector[i] = "Armor   [L]";
+				FinSegun
+			caso 12:
+				clasificacion = Aleatorio(1,3);
+				Segun clasificacion Hacer
+					caso 1: 
+						vector[i] = " ~Sword~ [M]";
+					caso 2: 
+						vector[i] = " ~Armor~ [M]";
+					caso 3: 
+						vector[i] = " ~Hammer~[M]";
+				FinSegun
+		FinSegun
+	FinPara
+	posicion = Aleatorio(20,30);
+	//para j = 1 Hasta 23 Hacer
+	para i = 1 Hasta posicion Con Paso 1 Hacer
+		Borrar Pantalla
+		Escribir "CAJA MISTERIOSA";
+		vector[i] = vector[i+1];
+		Escribir "[",vector[i+1],"] ","[",vector[i+2],"] ","[",vector[i+3],"] ","[",vector[i+4],"] ","[",vector[i+5],"] ";
+		Escribir "                                 ^     ";
+		ganador = vector[i+3];
+		Esperar 500 Milisegundos
+	FinPara
+	Escribir "Has conseguido un ", ganador;
+	//FinPara
+	tocapara();
+FinSubProceso
+
+
+
+
+//  			#####################################			CASO #3				####################################
+SubProceso perfil(trofeos, nombre)
+	Definir rango Como caracter;
+	rango = "NINGUNO";
+	Limpiar Pantalla;
+	trofeo = 750;
+	si trofeos >= 120 Y trofeos < 200 Entonces
+		Escribir "Felicidades has alcanzado el grado: [ HIERRO ]";
+		rango = "HIERRO";
+//		validacion =  2;
+//		Escribir validacion;
+		tocapara();
+		Limpiar Pantalla;
+	SiNo
+		si trofeos >= 200 Y trofeos < 320 Entonces
+			Escribir "Felicidades has alcanzado el grado: [ BRONCE ]";
+			rango = "BRONCE";
+			tocapara();
+			Limpiar Pantalla;
+		SiNo
+			si trofeos >= 320 Y trofeos < 450 Entonces
+				Escribir "Felicidades has alcanzado el grado: [ PLATA ]";
+				rango = "PLATA";
+				tocapara();
+				Limpiar Pantalla;
+			SiNo
+				si trofeos >= 450 Y trofeos < 600 Entonces
+					Escribir "Felicidades has alcanzado el grado: [ ORO ]";
+					rango = "BRONCE";
+					tocapara();
+					Limpiar Pantalla;
+				SiNo
+					si trofeos >= 600 Y trofeos < 800 Entonces
+						Escribir "Felicidades has alcanzado el grado: [ PLATINO ]";
+						rango = "PLATINO";
+						tocapara();
+						Limpiar Pantalla;
+					SiNo
+						si trofeos >= 800 Y trofeos < 1000 Entonces
+							Escribir "Felicidades has alcanzado el grado: [ DIAMANTE ]";
+							rango = "DIAMANTE";
+							tocapara();
+							Limpiar Pantalla;
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+	Escribir "Perfil: ", nombre;
+	Escribir "Trofeos: ", trofeos;
+	Escribir "Rango: [",rango,"]";
+	tocapara();
+FinSubProceso
+
+SubProceso tocapara()
+	Escribir Sin Saltar "Toca para continuar..."
+	leer pausa;
+FinSubProceso
