@@ -40,3 +40,29 @@ helloWorld1.4  -  21.02.23
 helloWorld1.5  -  22.02.23
 - added some different rank with their own needed trophies.
 - 
+
+helloWorld1.6  -  24.02.23
+- create 3 new chest with different attributes.
+  - SIMPLE BOX     -       PROBABILITIES(%)
+    - [C] - COMMON.             48%
+    - [R] - RARE.               21%
+    - [E] - EPIC.               18%
+    - [L] - LEGENDARY.           9%
+    - [M] - MYTH.                2%
+    - [U] - UNIQUE.              0%
+  - NORMAL BOX     -       PROBABILITIES(%)
+    - [C] - COMMON.             36%
+    - [R] - RARE.               20%
+    - [E] - EPIC.               20%
+    - [L] - LEGENDARY.          16%
+    - [M] - MYTH.                8%
+    - [U] - UNIQUE.              0%
+- EPIC BOX     -       PROBABILITIES(%)
+    - [C] - COMMON.             16.6%
+    - [R] - RARE.               24.9%
+    - [E] - EPIC.               24.9%
+    - [L] - LEGENDARY.          24.9%
+    - [M] - MYTH.                8.3%
+    - [U] - UNIQUE.              0.4%       
+   
+
