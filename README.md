@@ -42,27 +42,29 @@ helloWorld1.5  -  22.02.23
 - 
 
 helloWorld1.6  -  24.02.23
-- create 3 new chest with different attributes.
-  - SIMPLE BOX     -       PROBABILITIES(%)
+- Added 3 new chest with different probabilities to have different attributes.
+  - SIMPLE BOX       -      PROBABILITIES(%)
     - [C] - COMMON.             48%
     - [R] - RARE.               21%
     - [E] - EPIC.               18%
     - [L] - LEGENDARY.           9%
     - [M] - MYTH.                2%
     - [U] - UNIQUE.              0%
-  - NORMAL BOX     -       PROBABILITIES(%)
+  - NORMAL BOX      -      PROBABILITIES(%)
     - [C] - COMMON.             36%
     - [R] - RARE.               20%
     - [E] - EPIC.               20%
     - [L] - LEGENDARY.          16%
     - [M] - MYTH.                8%
     - [U] - UNIQUE.              0%
-- EPIC BOX     -       PROBABILITIES(%)
+  - EPIC BOX       -       PROBABILITIES(%)
     - [C] - COMMON.             16.6%
     - [R] - RARE.               24.9%
     - [E] - EPIC.               24.9%
     - [L] - LEGENDARY.          24.9%
     - [M] - MYTH.                8.3%
     - [U] - UNIQUE.              0.4%       
-   
+
+- Create different prices that will cost your trophies, so depending on how much do you have you can buy Boxes.
+- Add a trading system to use your trophies that you earn in battle, so you can spend in crates.
 
