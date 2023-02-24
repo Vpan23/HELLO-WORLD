@@ -38,8 +38,8 @@ helloWorld1.4  -  21.02.23
 - List of Items that you can win.
 
 helloWorld1.5  -  22.02.23
-- added some different rank with their own needed trophies.
-- 
+- Added some different rank with their own needed trophies.
+- Added a system where you can turn your rank to a higher one or lower.
 
 helloWorld1.6  -  24.02.23
 - Added 3 new chest with different probabilities to have different attributes.
