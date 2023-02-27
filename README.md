@@ -68,11 +68,16 @@ helloWorld1.6  -  24.02.23
 - Create different prices that will cost your trophies, so depending on how much do you have you can buy Boxes.
 - Add a trading system to use your trophies that you earn in battle, so you can spend in crates.
 
-helloWorld1.6  -  24.02.23
+helloWorld1.7  -  25.02.23
 - Added 4 leves depending on the trophies.
     - level 1: Operations with only 1 digits. 
     - level 2: Operations with only 2 digits.
     - level 3: Operations with only 3 digits.
     - level 4: Operations with only 4 digits.
 
-helloWorld1.7  -  24.02.23
+- Added Hack code to reach 1000 Trophies Instantly. In the principal menu write: "123456789".
+
+helloWorld1.8  -  26.02.23
+- Creation of credits for the creator call in the menu. Write "23" to see the animation added.
+- Added Items section from view profile. Now you can see the upon that you won in the shop.
+- 
