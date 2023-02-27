@@ -40,6 +40,13 @@ helloWorld1.4  -  21.02.23
 helloWorld1.5  -  22.02.23
 - Added some different rank with their own needed trophies.
 - Added a system where you can turn your rank to a higher one or lower.
+- There's six ranks:
+  - HIERRO
+  - BRONCE
+  - PLATA
+  - ORO
+  - PLATINO
+  - DIAMANTE 
 
 helloWorld1.6  -  24.02.23
 - Added 3 new chest with different probabilities to have different attributes.
@@ -81,3 +88,8 @@ helloWorld1.8  -  26.02.23
 - Creation of credits for the creator call in the menu. Write "23" to see the animation added.
 - Added Items section from view profile. Now you can see the upon that you won in the shop.
 - Now every time you gain something from the store you get the item as a collectible items.
+
+helloWorld1.9  -  27.02.23
+- Solved some bugs with the integer "i", and added the newest version to be compatible with the flexible profile of Pseint.
+- Added 1 new rank when you reach more than 1200 Trophies ~ "RETADOR".
+- Solved some distinct space in the items. Now it sees better.
