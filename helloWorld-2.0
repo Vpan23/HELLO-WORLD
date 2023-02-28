@@ -1,0 +1,898 @@
+Algoritmo helloWorld
+	Limpiar Pantalla;
+	menu();	//Acceder al menu.
+FinAlgoritmo
+
+SubProceso retorno()
+	Definir i,j,k,a Como Entero
+	Limpiar Pantalla
+	Escribir Sin Saltar "CARGANDO";
+	Para a <- 0 Hasta 2 Con Paso 1 Hacer
+		para i <- 0 Hasta 3 Con Paso 1 Hacer
+			esperar 80 Milisegundos;
+			Escribir Sin Saltar ".";
+		FinPara
+		Limpiar Pantalla
+		Escribir Sin Saltar "CARGANDO";
+	FinPara
+	Escribir "";
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso retornoEmparejando()
+	Definir i,j,k,a Como Entero
+	Limpiar Pantalla
+	Escribir Sin Saltar "EMPAREJANDO";
+	Para a <- 0 Hasta 2 Con Paso 1 Hacer
+		para i <- 0 Hasta 3 Con Paso 1 Hacer
+			esperar 150 Milisegundos;
+			Escribir Sin Saltar ".";
+		FinPara
+		Limpiar Pantalla
+		Escribir Sin Saltar "EMPAREJANDO";
+	FinPara
+	Escribir "";
+	Limpiar Pantalla;
+FinSubProceso
+
+//			#########################    MENU    #########################
+
+SubProceso admin()
+	Definir marco, marcos, animacion Como Caracter;
+	Definir i Como Entero;
+	Dimension marco[100],animacion[100];
+	
+	marcos = "=======================================";
+	para i = 1 Hasta Longitud(marcos) Hacer
+		marco[i] = Subcadena(marcos,i,i);
+	FinPara
+	
+	animacion[1] = "@";
+	animacion[2] = "#";
+	animacion[3] = "$";
+	animacion[4] = "%";
+	animacion[5] = "^";
+	animacion[6] = "&";
+	animacion[7] = "*";
+	animacion[8] = "~";
+	animacion[9] = ")";
+	animacion[10] = "{";
+	animacion[11] = "_";
+	animacion[12] = "}";
+	animacion[13] = "]";
+	animacion[14] = "?";
+	animacion[15] = "[";
+	animacion[16] = ";";
+	animacion[17] = "\";
+	animacion[18] = ",";
+	animacion[19] = "=";
+	animacion[20] = "!";
+	
+	//EFECTOS DE ANIMACION #1
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #2
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "V" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #3
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VI" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #4
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VIC" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #5
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VICT" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #6
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VICTO" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #7
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VICTOR " Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #8
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VICTOR P" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #9
+	para i = 1 Hasta 20 Hacer
+		Escribir "";
+		Escribir Sin Saltar "   ";
+		Escribir "VICTOR PA" Sin Saltar;
+		Escribir animacion[i];
+		Esperar 50 Milisegundos
+		Limpiar Pantalla;
+	FinPara
+	//EFECTOS DE ANIMACION #10
+	Limpiar Pantalla;
+	Escribir "";
+	Escribir Sin Saltar "   ";
+	Escribir "VICTOR PAN";
+	Escribir "";
+	tocapara();
+FinSubProceso
+
+
+SubProceso menu()
+	Definir nombre Como Caracter;
+	Definir trofeos, long, opc, i, u como entero;
+	Definir items Como Caracter;
+	Dimension items[100];
+	u = 1;
+	para i = 1 Hasta 100 Hacer
+		items[i] = "";
+	FinPara
+	nombre = " ";
+	hacer
+		Escribir "Ingrese su usuario" Sin Saltar;
+		leer nombre;
+	Hasta Que nombre <> " ";
+	trofeos = 0;
+	//#1 - INVOCAR LA PANTALLA DE CARGA.
+	pantallaCarga(opc);
+	si opc = 1 Entonces
+		Hacer
+			seleccion(opc);				//Cada vez que se termine una accion, volvera a preguntar por la posicion a la que quiere acceder.
+			segun opc Hacer
+				caso 1: 
+					problema(trofeos);
+				caso 2:
+					tienda(trofeos, items, u);
+				Caso 3:
+					perfil(trofeos, nombre, items);
+				caso 23:
+					admin();
+				Caso 123456789:
+					trofeos = trofeos + 10000;
+			FinSegun
+		Mientras Que opc <> 4;
+	FinSi	//EN CASO DE QUE LA OPCION DEL USUARIO HAYA SIDO SALIR ENTONCES NOS SALTARA ESTE BLOQUE DE CODIGOS.
+	
+FinSubProceso
+
+//#1 - INVOCAR LA PANTALLA DE CARGA.
+SubProceso pantallaCarga(opc Por Referencia)
+	Definir final, i, j Como Entero;
+	Definir marcos, title, marco, titulo, letra Como Caracter;
+	dimension marco[100], titulo[100];
+	
+	Limpiar Pantalla
+	marcos = "=======================================";
+	title = "   WELCOME TO HELLO WORLD - GAME 2.0   ";
+	final = Longitud(marcos);
+	para i = 1 Hasta final Hacer
+		letra = Subcadena(marcos, i, i);		//GUARDARA NUESTRO MARCO Y TITULO PARA HACER UN EFECTO DE ANIMACION.
+		marco[i] = letra;
+		letra = Subcadena(title, i, i);
+		titulo[i] = letra;
+	FinPara
+	
+	//	########################### 	Entrada de ANIMACION	#######################
+	
+	Para i = 1 Hasta final Hacer	
+		Escribir Sin Saltar marco[i];
+		Esperar 20 Milisegundos;
+	FinPara	;	escribir "";
+	Para i = 1 Hasta final Hacer
+		Escribir Sin Saltar titulo[i];
+		Esperar 80 Milisegundos;
+	FinPara	;	escribir "";
+	Para i = 1 Hasta final Hacer
+		Escribir Sin Saltar marco[i];
+		Esperar 20 Milisegundos;
+	FinPara	;	escribir "";
+	
+	Hacer
+		Borrar Pantalla		//Menu para inicializar la jugada o simplemente salir.
+		Escribir "=======================================";
+		Escribir "   WELCOME TO HELLO WORLD - GAME 2.0   ";
+		Escribir "=======================================";
+		
+		Escribir "Choose an Option:";
+		Escribir "(1) Play";
+		Escribir "(2) Exit";
+		Escribir Sin Saltar "Opc: ";
+		leer opc;
+	Mientras Que opc <> 1 y opc <> 2
+	
+FinSubProceso
+
+SubProceso seleccion(opc Por Referencia)
+	Limpiar Pantalla
+	retorno()
+	Escribir "Menu de Opciones: ";		// 		CREACION DE NUESTRO MENU PRINCIPAL.
+	Escribir "(1) - Batallar";
+	Escribir "(2) - Tienda";
+	Escribir "(3) - Ver Perfil";
+	Escribir "(4) - Salir";
+	Escribir Sin Saltar "Opc: ";
+	leer opc;
+FinSubProceso
+
+//							  	 ###################################  	  ( 1 ) - BATALLA	  	############################################
+//		######################################################  		Problemas de Batalla			##############################################
+
+SubProceso problema(trofeos Por Referencia)
+	Definir num1, num2, operacion, vidaEnemigo, vidaUsuario  Como entero;
+	Definir respuesta, resultado como real;
+	Definir pausa Como caracter;
+	vidaEnemigo = 3;
+	vidaUsuario = 3;
+	retornoEmparejando();
+	//trofeos = 1000;
+	Hacer
+		resultado = 0
+		num1 = Aleatorio(0,9);
+		num2 = Aleatorio(0,9);
+		operacion = Aleatorio(1,4);
+		//LA OPERACION CAMBIARA SEGUN SEA EL NUMERO QUE LE SEA OTORGADA.
+		//1. - Suma.
+		//2. - Resta.
+		//3. - Multiplicacion.
+		//4. - Division.
+		Limpiar Pantalla;
+		Escribir "";
+		Escribir "(You)    (Enemy)";
+		Escribir " []        []";
+		Escribir " ",vidaUsuario,"         ",vidaEnemigo;
+		Escribir "";
+		Escribir "";
+		tocapara();
+		
+		Limpiar Pantalla;
+		si trofeos < 300 Entonces
+			Escribir "Nivel Basico "
+		FinSi
+		si trofeos > 300 y trofeos < 600 Entonces
+			Escribir "Nivel Media ";
+		sino 
+			si trofeos > 600 y trofeos < 900 Entonces
+				Escribir "Nivel Experto ";
+			SiNo
+				si trofeos > 900 Entonces
+					Escribir "Nivel Dios ";
+				FinSi
+			FinSi
+		FinSi
+		Escribir "RESUELVA:";
+		segun operacion Hacer
+			caso 1: 
+				si trofeos > 300 y trofeos < 600 Entonces
+					num1 = Aleatorio(1,99);
+					num2 = Aleatorio(1,99);
+				sino 
+					si trofeos > 600 y trofeos < 900 Entonces
+						num1 = Aleatorio(1,999);
+						num2 = Aleatorio(1,999);
+					SiNo
+						si trofeos > 900 Entonces
+							num1 = Aleatorio(1,9999);
+							num2 = Aleatorio(1,9999);
+						FinSi
+					FinSi
+				FinSi
+				Escribir num1," + ",num2," = ";
+				resultado = num1 + num2;
+			caso 2: 
+				si trofeos > 300 y trofeos < 600 Entonces
+					num1 = Aleatorio(1,99);
+					num2 = Aleatorio(1,99);
+				sino 
+					si trofeos > 600 y trofeos < 900 Entonces
+						num1 = Aleatorio(1,999);
+						num2 = Aleatorio(1,999);
+					SiNo
+						si trofeos > 900 Entonces
+							num1 = Aleatorio(1,9999);
+							num2 = Aleatorio(1,9999);
+						FinSi
+					FinSi
+				FinSi
+				Escribir num1," - ",num2," = ";
+				resultado = num1 - num2;
+			caso 3: 
+				si trofeos > 300 y trofeos < 600 Entonces
+					num1 = Aleatorio(1,99);
+					num2 = Aleatorio(1,99);
+				sino 
+					si trofeos > 600 y trofeos < 900 Entonces
+						num1 = Aleatorio(1,999);
+						num2 = Aleatorio(1,999);
+					SiNo
+						si trofeos > 900 Entonces
+							num1 = Aleatorio(1,9999);
+							num2 = Aleatorio(1,9999);
+						FinSi
+					FinSi
+				FinSi
+				Escribir num1," X ",num2," = ";
+				resultado = num1 * num2;
+			caso 4: 
+				Hacer
+					num1 = Aleatorio(1,9);
+					num2 = Aleatorio(1,9);
+					si trofeos > 300 y trofeos < 600 Entonces
+						num1 = Aleatorio(1,99);
+						num2 = Aleatorio(1,99);
+					sino 
+						si trofeos > 600 y trofeos < 900 Entonces
+							num1 = Aleatorio(1,999);
+							num2 = Aleatorio(1,999);
+						SiNo
+							si trofeos > 900 Entonces
+								num1 = Aleatorio(1,9999);
+								num2 = Aleatorio(1,9999);
+							FinSi
+						FinSi
+					FinSi
+					
+				Hasta Que num1 % num2 = 0;		//Cambiara ambos numeros hasta que el primero sea mayor que el segundo y que sean mayores a 0.
+				
+				Escribir num1," / ",num2," = ";
+				resultado = num1 / num2;
+		FinSegun
+		leer respuesta;
+		si respuesta = resultado Entonces
+			vidaEnemigo = vidaEnemigo - 1;
+		SiNo
+			vidaUsuario = vidaUsuario - 1;
+		FinSi
+	Hasta Que vidaEnemigo = 0 o vidaUsuario = 0 
+	Limpiar Pantalla;
+	si vidaEnemigo = 0 Entonces
+		Escribir "Has ganado! +30 Trofeos";
+		trofeos = trofeos + 30;
+	SiNo
+		Escribir "Has perdido! -30 Trofeos";
+		trofeos = trofeos - 30;
+		si trofeos < 0 Entonces
+			trofeos = 0;
+		FinSi
+	FinSi
+	Escribir "Tienes: ", trofeos, " Trofeos";
+	tocapara();
+FinSubProceso
+
+
+//  			#####################################			CASO #2				####################################
+//Lista de Objetos segun su clasificacion.
+//Comunes.
+// - Pala de metal.
+//- Hacha.
+//- Botas de cuero.
+//- Warm Giant Brown Bear Leather Cloak.
+//- Warm Giant Brown Bear Leather Hat.
+//- Warm Giant Brown Bear Leather Armor
+//- Blacksmith's Hammer.
+//- Smith's Old Axe.
+//- Cabezal de paja.
+//- Cuchillo.
+
+//Rare
+//- Mengel's Plate Armor.
+//- Warm and Functional Giant Brown Bear Leather Gloves.
+//- Divine Shield.
+//- Mamon's Greatsword
+//- 30 Golden Needles Made of Pavranium.
+//- Black Quartz Earrings.
+//- Kruger's Scissors and Knife.
+//- Gis' Pickaxe.
+
+//Epic
+//- Khan's Masterpiece.
+//- The Best Gauntlets.
+//- Adventurer's Boots.
+//- Great Giant Brown Bear Boots.
+//- Unknown Blacksmith's Hammer.
+//- Elfin Stone's Ring.
+//- Latina's Necklace.
+
+//Legendary
+//- Daoist Woodcutting Axe
+//- Alex's Quick Gloves (Produced by Pagma).
+//- Elf's Bow Thimble (Made by Pagma).
+//- World Tree's Necklace.
+//- Lorex's Red Armor.
+
+//Myth
+//- World Crushing Sword of the Noble White Tiger.
+//- Hero King's Armor.
+//- Blacksmith Hammer to Go Against the Gods.
+//- Mjolnir - Human World Version x3.
+
+//Unique
+//- Duliani's Sword.
+//- Fenix's Sword.
+
+
+SubProceso tienda(trofeos Por Referencia, items Por Referencia, u Por Referencia)
+	Definir posicion , asignacionItems, clasificacion, opc, i, aux, random Como Entero;
+	Definir vector, ganador Como Caracter;
+	Definir acceso Como Logico;
+	acceso = falso;
+	//	trofeos =trofeos + 1000;
+	Dimension vector[100];
+	Limpiar Pantalla;
+	Escribir "BIENVENIDO A LA TIENDA";
+	Escribir "Seleccione que desea comprar: ";
+	Escribir "1. Caja Pequeña. - 100 Trofeos";
+	Escribir "2. Caja Mediana. - 300 Trofeos";
+	Escribir "3. Caja Grande. - 500 Trofeos";
+	Escribir "4. Salir(X)";
+	leer opc;
+	aux = trofeos;
+	
+	si opc = 1 Entonces
+		trofeos = trofeos - 100;
+		acceso = Verdadero;
+		si trofeos < 0 Entonces
+			trofeos = aux;
+			Escribir "No tienes la cantidad necesaria para comprar esta caja!";
+			acceso = falso;
+		FinSi
+	SiNo
+		si opc = 2 Entonces
+			trofeos = trofeos - 300;
+			acceso = Verdadero;
+			si trofeos < 0 Entonces
+				trofeos = aux;
+				Escribir "No tienes la cantidad necesaria para comprar esta caja!";
+				acceso = falso;
+			FinSi
+		SiNo
+			si opc = 3 Entonces
+				trofeos = trofeos - 500;
+				acceso = Verdadero;
+				si trofeos < 0 Entonces
+					trofeos = aux;
+					Escribir "No tienes la cantidad necesaria para comprar esta caja!";
+					acceso = falso;
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	//tocapara();
+	si acceso = Verdadero Entonces
+		segun opc Hacer
+			1:
+				para i = 1 Hasta 99 Hacer
+					asignacionItems = Aleatorio(1,100);
+					segun asignacionItems Hacer
+						caso 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48:
+							clasificacion = Aleatorio(1,9);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "  Pala  [C]";
+								caso 2: 
+									vector[i] = "  Hacha [C]";
+								caso 3: 
+									vector[i] = "  Botas [C]";
+								caso 4: 
+									vector[i] = "  Cloak [C]";
+								caso 5: 
+									vector[i] = "   Hat  [C]";
+								caso 6: 
+									vector[i] = "  Armor [C]";
+								caso 7: 
+									vector[i] = " Hammer [C]";
+								caso 8: 
+									vector[i] = "Old Axe [C]";
+								caso 9: 
+									vector[i] = "Cuchillo[C]";
+							FinSegun
+						caso 49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70:
+							clasificacion = Aleatorio(1,8);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "Armor  [R]";
+								caso 2: 
+									vector[i] = "Gloves  [R]";
+								caso 3: 
+									vector[i] = "Shield  [R]";
+								caso 4: 
+									vector[i] = "Grtsword[R]";
+								caso 5: 
+									vector[i] = "Needles [R]";
+								caso 6: 
+									vector[i] = "Earrings[R]";
+								caso 7: 
+									vector[i] = "Scissors[R]";
+								caso 8: 
+									vector[i] = "Pickaxe [R]";;
+							FinSegun
+						caso 70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88:
+							clasificacion = Aleatorio(1,7);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "Masterp [E]";
+								caso 2: 
+									vector[i] = "Gauntlet[E]";
+								caso 3: 
+									vector[i] = "  Armor [E]";
+								caso 4: 
+									vector[i] = "  Boots [E]";
+								caso 5: 
+									vector[i] = " Hammer [E]";
+								caso 6: 
+									vector[i] = "  Ring  [E]";
+								caso 7: 
+									vector[i] = "Necklace[E]";
+							FinSegun
+						caso 89,90,91,92,93,94,95,96,97,98:
+							clasificacion = Aleatorio(1,5);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "   Axe  [L]";
+								caso 2: 
+									vector[i] = " Gloves [L]";
+								caso 3: 
+									vector[i] = "  Bow   [L]";
+								caso 4: 
+									vector[i] = "Necklace[L]";
+								caso 5: 
+									vector[i] = "  Armor [L]";
+							FinSegun
+						caso 99,100:
+							clasificacion = Aleatorio(1,3);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = " ~Sword~ [M]";
+								caso 2: 
+									vector[i] = " ~Armor~ [M]";
+								caso 3: 
+									vector[i] = " ~Hammer~[M]";
+							FinSegun
+					FinSegun
+				FinPara
+				
+			2: 												//		##################################			opc #2				######################################
+				para i = 1 Hasta 99 Hacer
+					asignacionItems = Aleatorio(1,25);
+					segun asignacionItems Hacer
+						caso 1,2,3,4,5,6,7,8,9:
+							clasificacion = Aleatorio(1,9);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "  Pala  [C]";
+								caso 2: 
+									vector[i] = "  Hacha [C]";
+								caso 3: 
+									vector[i] = "  Botas [C]";
+								caso 4: 
+									vector[i] = "  Cloak [C]";
+								caso 5: 
+									vector[i] = "   Hat  [C]";
+								caso 6: 
+									vector[i] = "  Armor [C]";
+								caso 7: 
+									vector[i] = " Hammer [C]";
+								caso 8: 
+									vector[i] = "Old Axe [C]";
+								caso 9: 
+									vector[i] = "Cuchillo[C]";
+							FinSegun
+						caso 10,11,12,13,14:
+							clasificacion = Aleatorio(1,8);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = " Armor [R]";
+								caso 2: 
+									vector[i] = " Gloves [R]";
+								caso 3: 
+									vector[i] = " Shield [R]";
+								caso 4: 
+									vector[i] = "Grtsword[R]";
+								caso 5: 
+									vector[i] = "Needles [R]";
+								caso 6: 
+									vector[i] = "Earrings[R]";
+								caso 7: 
+									vector[i] = "Scissors[R]";
+								caso 8: 
+									vector[i] = "Pickaxe [R]";;
+							FinSegun
+						caso 15,16,17,18,19:
+							clasificacion = Aleatorio(1,7);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "Masterp [E]";
+								caso 2: 
+									vector[i] = "Gauntlet[E]";
+								caso 3: 
+									vector[i] = " Armor  [E]";
+								caso 4: 
+									vector[i] = " Boots  [E]";
+								caso 5: 
+									vector[i] = " Hammer [E]";
+								caso 6: 
+									vector[i] = "  Ring  [E]";
+								caso 7: 
+									vector[i] = "Necklace[E]";
+							FinSegun
+						caso 20,21,22,23:
+							clasificacion = Aleatorio(1,5);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "   Axe  [L]";
+								caso 2: 
+									vector[i] = " Gloves [L]";
+								caso 3: 
+									vector[i] = "  Bow   [L]";
+								caso 4: 
+									vector[i] = "Necklace[L]";
+								caso 5: 
+									vector[i] = "  Armor [L]";
+							FinSegun
+						caso 24,25:
+							clasificacion = Aleatorio(1,3);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = " ~Sword~ [M]";
+								caso 2: 
+									vector[i] = " ~Armor~ [M]";
+								caso 3: 
+									vector[i] = " ~Hammer~[M]";
+							FinSegun
+					FinSegun
+				FinPara
+			3: 												//		##################################			opc #3				######################################
+				para i = 1 Hasta 99 Hacer
+					asignacionItems = Aleatorio(1,13);
+					segun asignacionItems Hacer
+						caso 1,2:
+							clasificacion = Aleatorio(1,9);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "  Pala  [C]";
+								caso 2: 
+									vector[i] = "  Hacha [C]";
+								caso 3: 
+									vector[i] = "  Botas [C]";
+								caso 4: 
+									vector[i] = "  Cloak [C]";
+								caso 5: 
+									vector[i] = "   Hat  [C]";
+								caso 6: 
+									vector[i] = "  Armor [C]";
+								caso 7: 
+									vector[i] = " Hammer [C]";
+								caso 8: 
+									vector[i] = "Old Axe [C]";
+								caso 9: 
+									vector[i] = "Cuchillo[C]";
+							FinSegun
+						caso 3,4,5:
+							clasificacion = Aleatorio(1,8);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = " Armor [R]";
+								caso 2: 
+									vector[i] = " Gloves [R]";
+								caso 3: 
+									vector[i] = " Shield [R]";
+								caso 4: 
+									vector[i] = "Grtsword[R]";
+								caso 5: 
+									vector[i] = "Needles [R]";
+								caso 6: 
+									vector[i] = "Earrings[R]";
+								caso 7: 
+									vector[i] = "Scissors[R]";
+								caso 8: 
+									vector[i] = "Pickaxe [R]";;
+							FinSegun
+						caso 6,7,8:
+							clasificacion = Aleatorio(1,7);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "Masterp [E]";
+								caso 2: 
+									vector[i] = "Gauntlet[E]";
+								caso 3: 
+									vector[i] = "  Armor [E]";
+								caso 4: 
+									vector[i] = " Boots  [E]";
+								caso 5: 
+									vector[i] = " Hammer [E]";
+								caso 6: 
+									vector[i] = "  Ring  [E]";
+								caso 7: 
+									vector[i] = "Necklace[E]";
+							FinSegun
+						caso 9,10,11:
+							clasificacion = Aleatorio(1,5);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = "  Axe   [L]";
+								caso 2: 
+									vector[i] = " Gloves [L]";
+								caso 3: 
+									vector[i] = "  Bow   [L]";
+								caso 4: 
+									vector[i] = "Necklace[L]";
+								caso 5: 
+									vector[i] = "  Armor [L]";
+							FinSegun
+						caso 12:
+							clasificacion = Aleatorio(1,3);
+							Segun clasificacion Hacer
+								caso 1: 
+									vector[i] = " ~Sword~ [M]";
+								caso 2: 
+									vector[i] = " ~Armor~ [M]";
+								caso 3: 
+									vector[i] = " ~Hammer~[M]";
+							FinSegun
+						Caso 13:
+							random = Aleatorio(0,100);
+							si random = 10 Entonces
+								clasificacion = Aleatorio(1,2);
+								Segun clasificacion Hacer
+									caso 1: 
+										vector[i] = "~Duke Sword~ [U]";
+									caso 2: 
+										vector[i] = "~Fenix Sword~[U]";
+								FinSegun
+							SiNo
+								vector[i] = "Masterp [E]";
+							FinSi
+					FinSegun
+				FinPara
+		FinSegun
+		posicion = Aleatorio(20,30);
+		//para j = 1 Hasta 23 Hacer
+		para i = 1 Hasta posicion Con Paso 1 Hacer
+			Borrar Pantalla
+			si opc = 1 Entonces
+				Escribir "CAJA MISTERIOSA - PEQUEÑO";
+			SiNo
+				si opc = 2 Entonces
+					Escribir "CAJA MISTERIOSA - MEDIANA";
+				SiNo
+					si opc = 3 Entonces
+						Escribir "CAJA MISTERIOSA - GRANDE";
+					FinSi
+				FinSi
+			FinSi
+			vector[i] = vector[i+1];
+			Escribir "[",vector[i+1],"] ","[",vector[i+2],"] ","[",vector[i+3],"] ","[",vector[i+4],"] ","[",vector[i+5],"] ";
+			Escribir "                                 ^     ";
+			ganador = vector[i+3];
+			Esperar 500 Milisegundos
+		FinPara
+		Escribir "Has conseguido un ", ganador;
+		items[u] = ganador;
+		u = u + 1;
+	FinSi
+	//FinPara
+	tocapara();
+FinSubProceso
+
+
+
+
+//  			#####################################			CASO #3				####################################
+SubProceso perfil(trofeos, nombre, items)
+	Definir rango Como caracter;
+	Definir i Como Entero;
+	rango = "NINGUNO";
+	Limpiar Pantalla;
+	retorno();
+	si trofeos >= 120 Y trofeos < 200 Entonces
+		Escribir "Felicidades has alcanzado el grado: [ HIERRO ]";
+		rango = "HIERRO";
+		//		validacion =  2;
+		//		Escribir validacion;
+		tocapara();
+		Limpiar Pantalla;
+	SiNo
+		si trofeos >= 200 Y trofeos < 320 Entonces
+			Escribir "Felicidades has alcanzado el grado: [ BRONCE ]";
+			rango = "BRONCE";
+			tocapara();
+			Limpiar Pantalla;
+		SiNo
+			si trofeos >= 320 Y trofeos < 450 Entonces
+				Escribir "Felicidades has alcanzado el grado: [ PLATA ]";
+				rango = "PLATA";
+				tocapara();
+				Limpiar Pantalla;
+			SiNo
+				si trofeos >= 450 Y trofeos < 600 Entonces
+					Escribir "Felicidades has alcanzado el grado: [ ORO ]";
+					rango = "BRONCE";
+					tocapara();
+					Limpiar Pantalla;
+				SiNo
+					si trofeos >= 600 Y trofeos < 800 Entonces
+						Escribir "Felicidades has alcanzado el grado: [ PLATINO ]";
+						rango = "PLATINO";
+						tocapara();
+						Limpiar Pantalla;
+					SiNo
+						si trofeos >= 800 Y trofeos < 1200 Entonces
+							Escribir "Felicidades has alcanzado el grado: [ DIAMANTE ]";
+							rango = "DIAMANTE";
+							tocapara();
+							Limpiar Pantalla;
+						SiNo
+							si trofeos >= 1200 Entonces
+								Escribir "Felicidades has alcanzado el grado: [ RETADOR ]";
+								rango = "RETADOR";
+								tocapara();
+								Limpiar Pantalla;
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+	Escribir "Perfil: ", nombre;
+	Escribir "Trofeos: ", trofeos;
+	Escribir "Rango: [",rango,"]";
+	
+	si items[1] <> "" Entonces					//En caso de obtener tu primer item entonces se te abrira la opcion de Items del inventario.
+		Escribir Sin Saltar "Items:";
+		para i = 1 Hasta 100 Hacer
+			si items[i] <> "" Entonces
+				Escribir Sin Saltar "[",items[i],"] ";
+			FinSi
+		FinPara
+		Escribir "";
+	FinSi
+	Escribir "";
+	tocapara();
+FinSubProceso
+
+SubProceso tocapara()
+	Definir pausa Como Caracter;
+	Escribir Sin Saltar "Toca para continuar..."
+	leer pausa;
+FinSubProceso
