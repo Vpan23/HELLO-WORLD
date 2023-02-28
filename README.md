@@ -93,3 +93,13 @@ helloWorld1.9  -  27.02.23
 - Solved some bugs with the integer "i", and added the newest version to be compatible with the flexible profile of Pseint.
 - Added 1 new rank when you reach more than 1200 Trophies ~ "RETADOR".
 - Solved some distinct space in the items. Now it sees better.
+
+helloWorld1.9  -  28.02.23
+- FINAL WORK : 
+  - Solved bugs and problems.
+  - Checked too many times, that the game can run perfectly.
+  - Checked all subprocess are working well.
+  - Checked in case you write a wrong option, that isn't in the opc.
+  - Tried many times the game, and there's not any problem.
+  - Gived some hidden code to gain trophies. - "123456789" in the menu.
+  - Finished all process in the problems section.
